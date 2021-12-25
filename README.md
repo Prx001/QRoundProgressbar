@@ -23,7 +23,6 @@ Import 'RoundProgressbar' class from the package:
 from QRoundProgressbar import RoundProgressbar
 ```
 Now the widget is ready to use!
-SwitchControl is an alternative widget for QCheckBox from Qt framework, same methods, same usage and that's how it works.
 There are things you can define for the widget, like the progressbar color, background color, size, thickness and some other things.
 The package also contains a '__main__' script as shown in the video above so you can test the widget easily:
 ```
