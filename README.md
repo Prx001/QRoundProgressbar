@@ -11,7 +11,7 @@ QRoundProgressbar is a custom progressbar widget inherited from 'QWidget' class,
 
 ## How to use?
 ### Installation
-The package is available on [PyPi](https://pypi.org) so as always use pip for installation:
+The package is available on [PyPi](https://pypi.org/project/QRoundProgressbar/) so as always use pip for installation:
 ```
 pip install QRoundProgressbar
 ```
