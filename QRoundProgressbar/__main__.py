@@ -1,8 +1,8 @@
 import sys
 
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QWidget, QSlider, QPushButton, QCheckBox, QSpinBox, QColorDialog, QHBoxLayout, QVBoxLayout
-from PyQt5.QtGui import QColor
+from PyQt5.QtWidgets import QApplication, QWidget, QSlider, QPushButton, QCheckBox, QSpinBox, QColorDialog, QHBoxLayout, \
+	QVBoxLayout
 
 from QRoundProgressbar import RoundProgressbar
 
@@ -14,7 +14,7 @@ class Form(QWidget):
 
 	def init_ui(self):
 		self.resize(600, 400)
-		self.setWindowTitle("Circular Progress Bar")
+		self.setWindowTitle("Round Progress Bar")
 		self.progressbar = RoundProgressbar()
 		self.progressbar.resize(120, 120)
 		self.slider = QSlider(Qt.Horizontal)
@@ -26,10 +26,12 @@ class Form(QWidget):
 		self.thickness_spinbox = QSpinBox()
 		self.thickness_spinbox.setValue(self.progressbar.thickness)
 		self.thickness_spinbox.setToolTip("This number defines the progress bar thickness")
-		self.thickness_spinbox.valueChanged.connect(lambda: self.progressbar.set_thickness(self.thickness_spinbox.value()))
+		self.thickness_spinbox.valueChanged.connect(
+			lambda: self.progressbar.set_thickness(self.thickness_spinbox.value()))
 		self.round_edge_checkbox = QCheckBox("Round edge")
 		self.round_edge_checkbox.setToolTip("Leaving this option checked, will make the progress bar edges round")
-		self.round_edge_checkbox.clicked.connect(lambda: self.progressbar.set_round_edge(True) if self.round_edge_checkbox.isChecked() else self.progressbar.set_round_edge(False))
+		self.round_edge_checkbox.clicked.connect(lambda: self.progressbar.set_round_edge(
+			True) if self.round_edge_checkbox.isChecked() else self.progressbar.set_round_edge(False))
 		self.change_color_button = QPushButton("Change color")
 		self.change_color_button.setToolTip("Select a color for the progress bar")
 		self.change_color_button.clicked.connect(lambda: self.open_dialog(self.progressbar, 0))
@@ -40,7 +42,8 @@ class Form(QWidget):
 		self.fill_bg_circle_checkbox.setToolTip(
 			"Leaving this option checked, will fill the background of the progress bar"
 		)
-		self.fill_bg_circle_checkbox.clicked.connect(lambda: self.progressbar.set_fill_bg_circle(True) if self.fill_bg_circle_checkbox.isChecked() else self.progressbar.set_fill_bg_circle(False))
+		self.fill_bg_circle_checkbox.clicked.connect(lambda: self.progressbar.set_fill_bg_circle(
+			True) if self.fill_bg_circle_checkbox.isChecked() else self.progressbar.set_fill_bg_circle(False))
 		self.vertical_box = QVBoxLayout()
 		self.vertical_box.addWidget(self.progressbar)
 		self.vertical_box.addWidget(self.slider)
