@@ -6,8 +6,8 @@ from PyQt5.QtGui import QPainter, QColor, QPen, QBrush
 class RoundProgressbar(QWidget):
 	def __init__(
 			self,
-			color: QColor = QColor(170, 0, 255),
 			parent=None,
+			color: QColor = QColor(170, 0, 255),
 			size: int = 100,
 			thickness: int = 10,
 			value: int = 24,
